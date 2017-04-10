@@ -1,21 +1,21 @@
-import sys
+#l1 = input("Fill the first list")
+#l2 = input("Fill the second list")
 
-string_1 = input("Write your poem")
+l1 = ['white','green','brown','red']
+l2 = ['brown','green','red','blue']
 
-iterate_list = string_1.split(' ')
-c=0
-for i in iterate_list:
-    if(i[0].isupper()):
-        if(c==0):
-            sys.stdout.write('\n\t'+i+' ')
-            #sys.stdout.write(i+" ")
-            c+=1
-        elif(c==1):
-            sys.stdout.write('\n\t\t'+i+' ')
-            #sys.stdout.write(i+" ")
-            c+=1
-        elif(c==2):
-            sys.stdout.write('\n\t\t\t'+i+' ')
-            #sys.stdout.write(i+" ")
-            c=0
-    else: sys.stdout.write(i+' ')
+
+not_there= []
+
+s1 ='white'
+s2 = 'white'
+
+for word1 in l1:
+    if word1 not in l2:
+        not_there = str(not_there) + word1
+
+for word1 in l2:
+    if word1 not in l1:
+        not_there = str(not_there) + " " + word1
+
+print(not_there)
